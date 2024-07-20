@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:shopping_list/models/grocery_item.dart';
 import 'package:shopping_list/widgets/new_item.dart';
 class GroceryList extends StatefulWidget{
@@ -36,7 +35,7 @@ void _removeItems (GroceryItem item){
 
   @override
   Widget build(BuildContext context) {
-    Widget content = Center(child: Text('No item added yet '),);
+    Widget content = const Center(child: Text('No item added yet '),);
     
     if (_groceryItems.isNotEmpty){
       content = ListView.builder(
@@ -67,7 +66,8 @@ void _removeItems (GroceryItem item){
         actions: [
          IconButton(
           onPressed:_addItem , 
-         icon: const Icon(Icons.add) )
+         icon: const Icon(Icons.add),
+          ),
 
         ],
         ),
