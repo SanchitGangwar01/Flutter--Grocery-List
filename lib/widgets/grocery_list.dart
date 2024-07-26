@@ -56,7 +56,9 @@ if(response.statusCode>=400){
   json.decode(response.body);
   final List<GroceryItem> loadedItems = [];
    for (final item in listData.entries){
-   final category = categories.entries.firstWhere((catItem) => catItem.value.title==item.value['categories']).value;
+   final category = categories.entries
+   .firstWhere(
+    (catItem) => catItem.value.title==item.value['category']).value;
    
    loadedItems.add(
     GroceryItem(
